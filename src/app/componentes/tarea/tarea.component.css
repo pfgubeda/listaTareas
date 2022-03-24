@@ -1,0 +1,14 @@
+.completada{
+    color: green;
+    text-decoration: line-through;
+}
+.papelerita{
+    color: red;
+}
+.verdecito{
+    color: green;
+}
+
+.tareaCompletada{
+    background: rgba(51, 170, 51, .1)
+}

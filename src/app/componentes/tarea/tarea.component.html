@@ -1,0 +1,11 @@
+<div class="row" [ngClass]="{tareaCompletada: tarea.completada}">
+    <div class="col-9" #descripTarea  [ngClass]="{completada: tarea.completada}">{{tarea.descripcion}}</div>
+    <div class="col-9" #inputEditar hidden="true"><input type="text" class="form-control" id="nuevaD" #nuevaD value="{{tarea.descripcion}}" (keydown.enter)="editarTarea(nuevaD.value, tarea)"></div>
+    
+    <div class="col-1" #completadaTrue *ngIf="tarea.completada!=true; then thenBlock else elseBlock"  [ngClass]="{completada: tarea.completada}"></div>
+    <ng-template #thenBlock><div class="col-1"><button (click)="completarTarea(tarea)"><i class="bi bi-check-circle verdecito"></i></button></div></ng-template>
+    <ng-template #elseBlock><div class="col-1"><button (click)="completarTarea(tarea)"><i class="bi bi-x-circle papelerita"></i></button></div></ng-template>
+
+    <div class="col-1"><button (click)="modificar()"><i class="bi bi-pencil-square"></i></button></div>
+    <div class="col-1"><button (click)="eliminarTarea(tarea)"><i class="bi bi-trash3 papelerita"></i></button></div>
+</div>
