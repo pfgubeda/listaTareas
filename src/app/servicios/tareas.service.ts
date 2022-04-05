@@ -78,7 +78,6 @@ getTareas(){
   }
 
   guardarEnStorage(){
-    localStorage.clear();
     localStorage.setItem('lista', JSON.stringify(this.listaTareas));
   }
 }

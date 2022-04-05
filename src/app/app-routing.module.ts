@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { TareasPrincipalComponent } from './componentes/tareas-principal/tareas-principal.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  {path:'', component: TareasPrincipalComponent},
+  {path:'', component: TareasPrincipalComponent, canActivate: [LoginGuard]},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent}
   ]
