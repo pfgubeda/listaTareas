@@ -9,6 +9,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { TareasPrincipalComponent } from './componentes/tareas-principal/tareas-principal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { RegistroComponent } from './componentes/registro/registro.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
