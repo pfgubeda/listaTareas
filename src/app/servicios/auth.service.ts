@@ -51,6 +51,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
+        window.alert('Email de verificación mandado, comprueba la bandeja de entrada');
       })
       .catch((error) => {
         window.alert(error.message);
