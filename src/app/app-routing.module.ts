@@ -6,11 +6,16 @@ import { LoginComponent } from './componentes/login/login.component';
 import { TareasPrincipalComponent } from './componentes/tareas-principal/tareas-principal.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LoginGuard } from './guards/login.guard';
+import { VerifyEmailComponent } from './componentes/verify-email/verify-email.component';
+import { ForgotPasswordComponent } from './componentes/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  {path:'', component: TareasPrincipalComponent, canActivate: [LoginGuard]},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path:'todos', component: TareasPrincipalComponent, canActivate: [LoginGuard]},
   {path:'login', component:LoginComponent},
-  {path:'registro', component:RegistroComponent}
+  {path:'registro', component:RegistroComponent},
+  {path:'verify-email-adress', component:VerifyEmailComponent},
+  {path: 'forgot-password', component: ForgotPasswordComponent}
   ]
 @NgModule({
   declarations: [],

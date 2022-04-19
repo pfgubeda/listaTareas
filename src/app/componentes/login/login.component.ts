@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone} from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,22 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, public authService:AuthService) { }
 
   ngOnInit(): void {
+    
   }
 
-  Login(email:string){
-    /*provisional*/
-    let datosLogin = {
-      email: email,
-      isLogged: true
-    };
 
-    localStorage.setItem('login', JSON.stringify(datosLogin));
-    this.router.navigate(['']);
-  }
-  contraOlvidada(){
-    alert("Haber estudiao");
-  }
+   
+
 }

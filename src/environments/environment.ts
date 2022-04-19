@@ -35,8 +35,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -12,8 +12,15 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ForgotPasswordComponent } from './componentes/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './componentes/verify-email/verify-email.component';
+import { AuthService } from './servicios/auth.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [
@@ -24,14 +31,20 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     LoginComponent,
     TareasPrincipalComponent,
     RegistroComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
