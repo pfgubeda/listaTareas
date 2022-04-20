@@ -9,10 +9,12 @@ App Lista de tareas implementada con Angular. Visualizar, añadir, editar, compl
 - [x] Completar tarea
 - [x] Eliminar tarea
 - [x] Login page (sin implementación de backend)
-- [ ] Register page
-- [ ] ¿forgot password?
-- [ ] BackEnd Auth
+- [x] Register page
+- [x] ¿forgot password?
+- [x] BackEnd Auth
+- [x] LogIn con Google
+- [x] Tareas Compartidas entre todos los users
 
 ## Demo de la app
-Una demo funcional de la app se encuentra en https://apptodo.pafego.com , no es necesario ningún tipo de login.
+Una demo funcional de la app se encuentra en https://apptodo.pafego.com , es necesario loguearse.
 
