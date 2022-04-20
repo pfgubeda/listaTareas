@@ -9,12 +9,13 @@ import { TareasService } from 'src/app/servicios/tareas.service';
 })
 export class ListadoTareasComponent implements OnInit {
 
-  listaTareas : Tarea[] = [];
+  listaTareas: any[]=[];
   constructor(private tareasService : TareasService) { 
-    this.listaTareas = this.tareasService.getTareas();
+    
   }
 
   ngOnInit(): void {
+    this.listaTareas = this.tareasService.getTareas();
   }
 
 }

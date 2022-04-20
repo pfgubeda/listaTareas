@@ -15,12 +15,12 @@
                 <p class="text-white-50 mb-5">Introduce email y contraseña</p>
   
                 <div class="form-outline form-white mb-4">
-                  <input #email type="email" id="typeEmailX" class="form-control form-control-lg" />
+                  <input #email type="email" id="typeEmailX" class="form-control form-control-lg" (keydown.enter)="authService.SignIn(email.value, passw.value)"/>
                   <label class="form-label" for="typeEmailX">Email</label>
                 </div>
   
                 <div class="form-outline form-white mb-4">
-                  <input #passw type="password" id="typePasswordX" class="form-control form-control-lg" />
+                  <input #passw type="password" id="typePasswordX" class="form-control form-control-lg"  (keydown.enter)="authService.SignIn(email.value, passw.value)"/>
                   <label class="form-label" for="typePasswordX">Contraseña</label>
                 </div>
   
@@ -29,11 +29,8 @@
                 <button class="btn btn-outline-light btn-lg px-5" type="submit" (click)="authService.SignIn(email.value, passw.value)">Login</button>
   
                
-                <div class="formGroup">
-                  <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-                    <i class="fab fa-google-plus-g"></i>
-                    Log in with Google
-                  </button>
+                <div class="formGroup google">
+                  <img src="../../../assets/btn_google_signin_dark_focus_web@2x.png" alt="" (click)="authService.GoogleAuth()">
                 </div>
               </div>
   
