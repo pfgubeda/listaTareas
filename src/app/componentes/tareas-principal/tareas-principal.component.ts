@@ -13,4 +13,10 @@ export class TareasPrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cerrarSesion(){
+    if(confirm("¿Estás seguro de que quieres cerrar sesión?")){
+      this.authService.SignOut();
+    }
+  }
+
 }

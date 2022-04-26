@@ -36,6 +36,7 @@ export class TareasService {
   db = getFirestore();
 
   async getAllTodos() {
+    this.listaTareas = [];
     try {
       const tareas = await getDocs(collection(this.db, "Todos"));
       tareas.forEach(tarea => {
