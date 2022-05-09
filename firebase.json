@@ -1,20 +1,17 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/lista-tareas",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "hosting": {
-      "headers": [{
-          "source": "**",
-          "headers": [{
-              "key": "Cache-Control",
-              "value": "max-age=300"
-          }]
-      }]
-  }
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   },
   "firestore": {
     "rules": "firestore.rules",

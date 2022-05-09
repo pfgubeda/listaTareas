@@ -37,6 +37,7 @@ export class TareasService {
   
 
   async getAllTodos() {
+    console.log("version 09/05/2022");
     const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     this.listaTareas = [];
     try {

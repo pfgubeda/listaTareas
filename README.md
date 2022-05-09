@@ -1,4 +1,5 @@
 # AppToDo
+
 ## Descripción
 App Lista de tareas implementada con Angular. Visualizar, añadir, editar, completar y eliminar tareas.
 
@@ -13,8 +14,10 @@ App Lista de tareas implementada con Angular. Visualizar, añadir, editar, compl
 - [x] ¿forgot password?
 - [x] BackEnd Auth
 - [x] LogIn con Google
-- [x] Tareas Compartidas entre todos los users
-- [ ] Log Out
+- [x] Tareas privadas para los usuarios
+- [x] Log Out
+- [ ] Tareas compartidas entre usuarios
+
 ## Demo de la app
 Una demo funcional de la app se encuentra en https://apptodo.pafego.com , es necesario loguearse.
 
