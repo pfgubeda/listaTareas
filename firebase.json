@@ -5,7 +5,16 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "hosting": {
+      "headers": [{
+          "source": "**",
+          "headers": [{
+              "key": "Cache-Control",
+              "value": "max-age=300"
+          }]
+      }]
+  }
   },
   "firestore": {
     "rules": "firestore.rules",
