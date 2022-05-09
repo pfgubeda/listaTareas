@@ -16,7 +16,7 @@ App Lista de tareas implementada con Angular. Visualizar, añadir, editar, compl
 - [x] LogIn con Google
 - [x] Tareas privadas para los usuarios
 - [x] Log Out
-- [ ] Tareas compartidas entre usuarios
+- [ ] Tareas compartidas entre usuarios
 
 ## Demo de la app
 Una demo funcional de la app se encuentra en https://apptodo.pafego.com , es necesario loguearse.
