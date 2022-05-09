@@ -1,7 +1,7 @@
 # AppToDo
 
 ## Descripción
-App Lista de tareas implementada con Angular. Visualizar, añadir, editar, completar y eliminar tareas.
+App Lista de tareas implementada con Angular y firestore, hosteada en firebase. Visualizar, añadir, editar, completar y eliminar tareas.
 
 ## Características
 - [x] Ver lista tareas
