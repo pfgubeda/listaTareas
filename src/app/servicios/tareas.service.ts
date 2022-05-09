@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { UUID } from 'angular2-uuid';
 
 import { addDoc, collection, deleteDoc, doc, getDocs, getFirestore, updateDoc } from 'firebase/firestore';
 
@@ -34,11 +35,13 @@ export class TareasService {
 
 
   db = getFirestore();
+  
 
   async getAllTodos() {
+    const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     this.listaTareas = [];
     try {
-      const tareas = await getDocs(collection(this.db, "Todos"));
+      const tareas = await getDocs(collection(this.db, "/users/"+uuiduser+"/Todos"));
       tareas.forEach(tarea => {
         this.listaTareas.push({
           id: tarea.id,
@@ -52,9 +55,9 @@ export class TareasService {
   }
 
   async eliminarTareaFirebase(tarea: Tarea) {
-
+    const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     try {
-      await deleteDoc(doc(this.db, "Todos", tarea.id));
+      await deleteDoc(doc(this.db, "/users/"+uuiduser+"/Todos", tarea.id));
       console.log("tarea eliminada en firebase " + tarea.id);
     } catch (e) {
       console.error("Error eliminando tarea: ", e);
@@ -67,8 +70,9 @@ export class TareasService {
   }
 
   async addTareaFirebase(tarea: Tarea) {
+    const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     try {
-      const tareaRef = await addDoc(collection(this.db, "Todos"), {
+      const tareaRef = await addDoc(collection(this.db, "/users/"+uuiduser+"/Todos"), {
         completada: tarea.completada,
         descripcion: tarea.descripcion
       });
@@ -81,8 +85,9 @@ export class TareasService {
   }
 
   async updateTareaFirebase(tarea: Tarea) {
+    const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     try {
-      const tareaId = getDocs(collection(this.db, "Todos"));
+      const tareaId = getDocs(collection(this.db, "/users/"+uuiduser+"/Todos"));
       (await tareaId).forEach(async tarea2 => {
         if (tarea.id === tarea2.id) {
           const tarea3 = tarea2.ref;
