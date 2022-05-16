@@ -49,6 +49,16 @@ export class TareasService {
           completada: tarea.data()['completada']
         });
       });
+      this.listaTareas.sort((a, b) => {
+        if (a.completada && !b.completada) {
+          return -1;
+        } else if (!a.completada && b.completada) {
+          return 1;
+        } else {
+          return 0;
+        }
+      }
+      );
     } catch (e) {
       console.error("Error getting tareas: ", e);
     }

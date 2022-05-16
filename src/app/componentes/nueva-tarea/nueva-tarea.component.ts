@@ -13,7 +13,9 @@ export class NuevaTareaComponent implements OnInit {
 
   @ViewChild("nuevaTarea") nuevaTarea : any;
 
-  constructor(private tareasService:TareasService) { }
+  constructor(private tareasService:TareasService) {
+    this.nuevaTarea.nativeElement.focus();
+   }
 
   
   ngOnInit(): void {
