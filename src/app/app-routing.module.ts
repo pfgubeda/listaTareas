@@ -10,7 +10,7 @@ import { VerifyEmailComponent } from './componentes/verify-email/verify-email.co
 import { ForgotPasswordComponent } from './componentes/forgot-password/forgot-password.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'todos', pathMatch: 'full' },
   {path:'todos', component: TareasPrincipalComponent, canActivate: [LoginGuard]},
   {path:'login', component:LoginComponent},
   {path:'registro', component:RegistroComponent},

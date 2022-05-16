@@ -37,7 +37,6 @@ export class TareasService {
   
 
   async getAllTodos() {
-    console.log("version 09/05/2022");
     const uuiduser = JSON.parse(localStorage.getItem('user')!).uid;
     this.listaTareas = [];
     try {
@@ -51,9 +50,9 @@ export class TareasService {
       });
       this.listaTareas.sort((a, b) => {
         if (a.completada && !b.completada) {
-          return -1;
-        } else if (!a.completada && b.completada) {
           return 1;
+        } else if (!a.completada && b.completada) {
+          return -1;
         } else {
           return 0;
         }

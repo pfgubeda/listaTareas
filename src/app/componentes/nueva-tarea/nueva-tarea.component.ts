@@ -14,11 +14,14 @@ export class NuevaTareaComponent implements OnInit {
   @ViewChild("nuevaTarea") nuevaTarea : any;
 
   constructor(private tareasService:TareasService) {
-    this.nuevaTarea.nativeElement.focus();
    }
 
   
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    this.nuevaTarea.nativeElement.focus();
   }
 
   anadirTarea(tarea:string){
